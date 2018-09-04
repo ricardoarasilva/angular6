@@ -10,6 +10,12 @@ import {RouterModule, Routes} from '@angular/router';
 
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { AdunitService } from './adunit.service';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
 const routes: Routes = [
   {
     path: 'create',
@@ -35,9 +41,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    SlimLoadingBarModule
+    SlimLoadingBarModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ AdunitService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
